@@ -1,0 +1,18 @@
+{% extends "students/base.html" %}
+{% block title %}Student Details{% endblock %}
+{% block content %}
+<div class="card shadow-sm mx-auto" style="max-width: 650px;">
+    <div class="card-body p-4">
+        <h2>Student Details</h2>
+        <dl class="row mt-4">
+            <dt class="col-sm-4">ID</dt><dd class="col-sm-8">{{ student.id }}</dd>
+            <dt class="col-sm-4">Name</dt><dd class="col-sm-8">{{ student.name }}</dd>
+            <dt class="col-sm-4">Email</dt><dd class="col-sm-8">{{ student.email }}</dd>
+            <dt class="col-sm-4">Age</dt><dd class="col-sm-8">{{ student.age }}</dd>
+            <dt class="col-sm-4">Department</dt><dd class="col-sm-8">{{ student.department }}</dd>
+        </dl>
+        <a class="btn btn-warning" href="{% url 'students:student_update' student.pk %}">Edit</a>
+        <a class="btn btn-secondary" href="{% url 'students:student_list' %}">Back</a>
+    </div>
+</div>
+{% endblock %}
